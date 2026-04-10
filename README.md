@@ -1,12 +1,45 @@
-# React + Vite
+# Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React-based quiz application that fetches real trivia questions from [The Trivia API](https://the-trivia-api.com/).
 
-Currently, two official plugins are available:
+## Features
+- Select from 5 categories: General Knowledge, Science: Computers, Sports, History, Geography
+- 15 questions per quiz with randomized/shuffled options
+- Interactive answering with visual feedback (green for correct, red for wrong)
+- Score tracking and final results display
+- Reset quiz functionality
+- Responsive design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Currently Active
+- Form component: Category selector UI
+- Quiz component: Full quiz logic (commented out in App.jsx, ready to uncomment)
 
-## Expanding the ESLint configuration
+## Tech Stack
+- React 19
+- Vite 7 (dev server)
+- ESLint for code quality
+- CSS modules for styling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Quick Start
+```
+npm install
+npm run dev
+```
+Visit http://localhost:5173/
+
+## Project Structure
+```
+src/
+├── App.jsx          # Root: Renders Form (Quiz ready to enable)
+├── main.jsx         # Entry point
+├── components/Quiz/
+│   ├── Form.jsx     # Category selection form
+│   ├── Quiz.jsx     # Main quiz: state, API fetch, UI logic
+│   └── Quiz.css     # Quiz styles
+└── assets/
+    └── data.js      # Sample static quiz data (backup/local)
+```
+
+## API Integration
+Fetches questions dynamically: `https://the-trivia-api.com/v2/questions?limit=15&categories={id}`
+
